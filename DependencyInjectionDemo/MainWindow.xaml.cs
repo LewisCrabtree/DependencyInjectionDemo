@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Windows;
-using Microsoft.Extensions.DependencyInjection;
 using DependencyInjectionDemo.Services.Counter;
 using DependencyInjectionDemo.Services.Save;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace DependencyInjectionDemo
 {
@@ -13,7 +13,6 @@ namespace DependencyInjectionDemo
     {
         private readonly IServiceProvider _serviceProvider;
 
-        // Inject the IServiceProvider to resolve other services or windows.
         public MainWindow(IServiceProvider serviceProvider)
         {
             InitializeComponent();
@@ -26,7 +25,6 @@ namespace DependencyInjectionDemo
             var counterService = _serviceProvider.GetRequiredService<ICounterService>();
             var saveService = _serviceProvider.GetRequiredService<ISaveService>();
 
-            // Pass the resolved services to SampleWindow's constructor.
             var sampleWindow = new SampleWindow(counterService, saveService);
             sampleWindow.Show();
         }

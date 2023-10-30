@@ -25,7 +25,7 @@ namespace DependencyInjectionDemo
 
                     // Register services
                     services.AddSingleton<ICounterService, CounterService>(); // AddSingleton, AddTransient
-                    services.AddSingleton<ISaveService, JsonFileSaveService>(); // or JsonFileSaveService or NoOpSaveService
+                    services.AddSingleton<ISaveService, TextFileSaveService>(); // or JsonFileSaveService or NoOpSaveService
                 })
                 .Build();
         }

@@ -6,6 +6,7 @@ namespace DependencyInjectionDemo.Services.Counter
 {
     internal class CounterService : ICounterService
     {
+        private static readonly object _lock = new();
         private readonly int _increment;
 
         private int _counter;
@@ -20,7 +21,10 @@ namespace DependencyInjectionDemo.Services.Counter
 
         public void IncrementCounter()
         {
-            _counter += _increment;
+            lock (_lock)
+            {
+                _counter += _increment;
+            }
             CounterChanged?.Invoke();
         }
     }
