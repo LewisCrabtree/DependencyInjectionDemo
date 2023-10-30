@@ -2,6 +2,6 @@
 # This .gitignore file was automatically created by Microsoft(R) Visual Studio.
 ################################################################################
 
-/DependencyInjectionDemo/DependencyInjectionDemo/obj/
+/DependencyInjectionDemo/obj/
 
-/DependencyInjectionDemo/DependencyInjectionDemo/bin/
+/DependencyInjectionDemo/bin/
